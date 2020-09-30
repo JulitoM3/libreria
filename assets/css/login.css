@@ -1,0 +1,33 @@
+body{
+    background: #ffffff;
+    background: -webkit-linear-gradient(to right, #ffffff, #cccccc);
+    background: linear-gradient(to right, #ffffff, #cccccc);
+    min-height: 100vh;
+    background-image: url('/assets/imgs/login.jpg');
+    background-repeat: no-repeat;
+    background-color: #ffffff;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: black;
+    overflow-x: hidden;
+    padding-top: 100px;
+}
+
+@media handheld, only screen and (max-width: 767px) {
+    body {
+        background-image: none;
+    }
+}
+
+@media only screen and (max-width: 1023px) {
+    body {
+        background-image: none;
+    }
+}
+
+.card {
+    background-color: rgb(241, 241, 245);
+    opacity: 1;
+}
