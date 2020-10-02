@@ -20,6 +20,23 @@
                     echo '<p class="alert alert-danger">' . $_SESSION['empty_input'] . '</p>';
                     session_destroy();
                 }
+                if (isset($_SESSION['exist']) && !boolval($_SESSION['exist'])) {
+                    echo '<p class="alert alert-danger">' . $_SESSION['message_exist'] . '</p>';
+                    session_destroy();
+                }
+                if (boolval($_SESSION['exist'])) {
+                    if ($_SESSION['role'] === 1) {
+                        header('Location:administrador.php');
+                    }
+            
+                    if ($_SESSION['role']=== 2) {
+                        header('Location:/vistas/recepcionista/recepcionista.php');
+                    }
+            
+                    if ($_SESSION['role'] === 3) {
+                        header('Location:usuario.php');
+                    }
+                }
                 ?>
                 <div class="card shadow">
                     <div class="card-header">

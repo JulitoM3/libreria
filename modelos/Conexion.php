@@ -8,13 +8,12 @@ class Conexion {
 
     public static function getInstance(){
         if(empty(self::$instancia)){
-            $db_host = 'localhost';
-            $db_user = 'root';
-            $db_password = '';
+            $db_host = '127.0.0.1';
+            $db_user = 'julio';
+            $db_password = 'Danielita';
             $db_name = 'libreria';
-            
             try {
-                self::$instancia = new PDO('mysql:host='.$db_host . ';dbname=' .$db_name, $db_user,$db_password);
+                self::$instancia = new PDO('pgsql:host='.$db_host . ';dbname=' .$db_name, $db_user,$db_password);
                 self::$instancia->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_SILENT);
             } catch (Exception $e) {
                 echo 'Error en: ' . $e->getMessage() . '<br>';
