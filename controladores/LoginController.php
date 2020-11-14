@@ -29,7 +29,7 @@ if (!empty($usuario) && !empty($contraseña)) {
         var_dump($data->role_id);
 
         if ($data->role_id === 1) {
-            header('Location:administrador.php');
+            header('Location:/vistas/recepcionista/administrador.php');
         }
 
         if ($data->role_id=== 2) {
@@ -37,7 +37,7 @@ if (!empty($usuario) && !empty($contraseña)) {
         }
 
         if ($data->role_id === 3) {
-            header('Location:usuario.php');
+            header('Location:/vistas/recepcionista/usuario.php');
         }
     }
 } else {
