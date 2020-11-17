@@ -23,13 +23,11 @@ if (!empty($usuario) && !empty($contraseña)) {
         session_start();
         $_SESSION['exist'] = true;
         $_SESSION['usuario_id'] = $data->user_id;
-        $_SESSION['usuario'] = $data->nombres . ' ' . $data->apellido_paterno . ' ' . $data->apellido_materno;
+        $_SESSION['usuario'] = $data->nombre . ' ' . $data->a_paterno . ' ' . $data->a_materno;
         $_SESSION['role'] = $data->role_id;
 
-        var_dump($data->role_id);
-
         if ($data->role_id === 1) {
-            header('Location:/vistas/recepcionista/administrador.php');
+            header("Location:/vistas/administrador/dashboard.php");
         }
 
         if ($data->role_id=== 2) {
@@ -37,7 +35,7 @@ if (!empty($usuario) && !empty($contraseña)) {
         }
 
         if ($data->role_id === 3) {
-            header('Location:/vistas/recepcionista/usuario.php');
+            header('Location:/vistas/tienda/usuario.php');
         }
     }
 } else {
