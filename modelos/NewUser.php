@@ -15,11 +15,11 @@ class NewUser{
             $_SESSION['registrado'] = true;
             $_SESSION['message_registrado'] = 'Registrado correctamente';
             $result->execute();
-            header('Location:/');
+            return header('Location:/');
         }else{
             $_SESSION['duplicado'] = true;
             $_SESSION['message_duplicado'] = 'El correo ya existe.';
-            header('Location:/registro.php');
+            return header('Location:/registro.php');
         }
         
     }
