@@ -35,7 +35,7 @@ if (!empty($usuario) && !empty($contraseña)) {
         }
 
         if ($data->role_id === 3) {
-            header('Location:/vistas/tienda/usuario.php');
+            header('Location:/vistas/tienda/index.php');
         }
     }
 } else {

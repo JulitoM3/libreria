@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/login.css">
+    <link rel="stylesheet" href="../assets/css/login.css">
     <title>Login</title>
 </head>
 
@@ -52,7 +52,7 @@
                         Bienvenido.
                     </div>
                     <div class="card-body">
-                        <form action="controladores/LoginController.php" method="post">
+                        <form action="../controladores/LoginController.php" method="post">
                             <label for="usuario">Correo</label>
                             <input type="text" name="usuario" id="usuario" class="form-control" autocomplete="off">
                             <label for="pass">Contraseña</label>

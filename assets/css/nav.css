@@ -18,7 +18,7 @@ ul.topnav li a {
   text-decoration: none;
 }
 
-ul.topnav li a:hover:not(.active) {background-color: #111;}
+ul.topnav li a:hover:not(.active) {background-color: #FFDF6C; color:black; border-radius: 5px;}
 
 ul.topnav li a.active {background-color: #FFDF6C; color: black;}
 
@@ -29,9 +29,19 @@ ul.topnav li.right {float: right;}
   ul.topnav li {float: none;}
 }
 h1{
-    padding-top: 125px;
-    padding-bottom: 125px;
-    padding-left: 300px;
+    padding-bottom: 55px;
+    padding-left: 250px;
     background-color: #333;
     color:  #FFFFFF;
+    border-bottom-left-radius: 150px;
+    border-bottom-right-radius: 150px;
+}
+
+h1 .img{
+    display: inline-block;
+    padding-left: 250px;
+}
+
+h2{
+    text-align: center;
 }
