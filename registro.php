@@ -24,7 +24,7 @@
                 Nuevo usuario
             </div>
             <div class="card-body">
-                <form action="controladores/CreateUserController.php" method="post">
+                <form action="controladores/RegisterUserController.php" method="post">
                     <label for="nombre">Nombre</label>
                     <input type="text" name="nombre" id="nombre" class="form-control" autocomplete="off"><br>
                     <label for="a_paterno">Apellido Paterno</label>
@@ -37,7 +37,10 @@
                     <label for="pass">Contraseña</label>
                     <input type="password" name="pass" id="pass" class="form-control" autocomplete="off"><br>
                     <input type="submit" value="Crear cuenta" class="form-control btn btn-outline-success" >
-                </form>
+                </form><br>
+                <div class="card-footer">
+                    <a href="vistas/login.php" class="btn btn-outline-info form-control">Atras</a>
+                </div>
             </div>
         </div>
     </div>

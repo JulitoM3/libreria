@@ -19,10 +19,9 @@ if (!empty($usuario) && !empty($contraseña)) {
         $_SESSION['message_exist'] = 'El usuario no existe en la base de datos';
         header('Location:/');
     } else {
-        var_dump($data);
         session_start();
         $_SESSION['exist'] = true;
-        $_SESSION['usuario_id'] = $data->user_id;
+        $_SESSION['usuario_id'] = $data->usuario_id;
         $_SESSION['usuario'] = $data->nombre . ' ' . $data->a_paterno . ' ' . $data->a_materno;
         $_SESSION['role'] = $data->role_id;
 
@@ -42,5 +41,5 @@ if (!empty($usuario) && !empty($contraseña)) {
     session_start();
     $_SESSION['empty'] = true;
     $_SESSION['empty_input'] = 'Todos los campos son necesarios';
-    header('Location:/');
+    header('Location:/vistas/login.php');
 }

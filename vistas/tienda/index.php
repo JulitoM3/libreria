@@ -28,7 +28,7 @@
         <a href="">Categorías</a>
     </li>
     <?php session_start()?>
-    <?php if(isset($_SESSION['usuario'])): ?>
+    <?php if(isset($_SESSION['exist'])): ?>
     <li class="right" style="padding-top:9px">
         <form action="../../controladores/LogoutController.php" method="post">
             <input type="submit" value="Cerrar sesión" class="btn btn-outline-danger">
