@@ -2,6 +2,7 @@
 
 Lecturiosis es un proyecto de tienda en linea en php puro con mayor parte de la lógica instalada en la base de datos (postgreSQL).
 
+![myimage-alt-tag](https://github.com/JulitoM3/libreria/blob/master/assets/imgs/Captura.PNG)
 ## Features
 
 ```bash
