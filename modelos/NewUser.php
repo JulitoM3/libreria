@@ -40,4 +40,29 @@ class NewUser{
              return header('Location:/vistas/administrador/nuevo.php');
     }
 
+    public static function showAllUsers(){
+        require_once('Conexion.php');
+        $db = Conexion::getInstance();
+        $usuarios;
+        $sql = "select u.nombre as nombres, u.a_paterno, u.a_materno, u.correo, r.roles as permiso 
+        FROM user_roles as ur
+        inner join usuarios as u on u.usuario_id = ur.user_id
+        inner join roles as r on r.role_id = ur.role_id";
+
+        $result = $db->prepare($sql);
+        $result->execute();
+        if($result->rowCount() > 0){
+            $usuarios = $result->fetchAll(PDO::FETCH_OBJ);
+            return $usuarios;
+        }else{
+            return 'vaya...No se encontraron usuarios';
+        }
+
+        
+    }
+
+    public function searchUser($id){
+
+    }
+
 }
