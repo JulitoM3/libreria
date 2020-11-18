@@ -1,0 +1,8 @@
+#panel{
+    color: white;
+    background-color: #333;
+    border-bottom-left-radius: 150px;
+    border-bottom-right-radius: 150px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
