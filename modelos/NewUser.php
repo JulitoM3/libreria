@@ -44,11 +44,7 @@ class NewUser{
         require_once('Conexion.php');
         $db = Conexion::getInstance();
         $usuarios;
-        $sql = "select u.nombre as nombres, u.a_paterno, u.a_materno, u.correo, r.roles as permiso 
-        FROM user_roles as ur
-        inner join usuarios as u on u.usuario_id = ur.user_id
-        inner join roles as r on r.role_id = ur.role_id";
-
+        $sql = "select * from fn_paginar_usuarios(5,1)";
         $result = $db->prepare($sql);
         $result->execute();
         if($result->rowCount() > 0){

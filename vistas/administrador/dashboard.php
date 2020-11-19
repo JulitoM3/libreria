@@ -36,7 +36,6 @@
                     </div>
                     <div class="card-body">
                         <a href="../../controladores/ShowUsersController.php" class="form-control btn btn-sm btn-outline-info">Ver todos los usuarios</a>
-                        <a href="" class="form-control btn btn-sm btn-outline-primary">Buscar usuario</a>
                         <a href="nuevo.php" class="form-control btn btn-sm btn-outline-success">Ingresar nuevo usuario</a>
                     </div>
                 </div>
@@ -48,7 +47,6 @@
                     </div>
                     <div class="card-body">
                         <a href="#" class="form-control btn btn-sm btn-outline-info">Ver todos los libros</a>
-                        <a href="#" class="form-control btn btn-sm btn-outline-primary">Buscar libro</a>
                         <a href="#" class="form-control btn btn-sm btn-outline-success">Ingresar nuevo libro</a>
                     </div>
                 </div>
