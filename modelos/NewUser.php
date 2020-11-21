@@ -57,8 +57,20 @@ class NewUser{
         
     }
 
-    public function searchUser($id){
-
+    public function editUser($id){
+        $sql = "select u.usuario_id, u.nombre as nombres, u.a_paterno, u.a_materno, u.correo, r.role_id as permiso 
+        FROM user_roles as ur
+        inner join usuarios as u on u.usuario_id = ur.user_id
+        inner join roles as r on r.role_id = ur.role_id
+        where usuario_id = ". $id ;
+        $result = $this->db->prepare($sql);
+        $result->execute();
+        if($result->rowCount() > 0){
+            $usuario = $result->fetch(PDO::FETCH_OBJ);
+            return $usuario;
+        }else{
+            return 'Usuario no encontrado.';
+        }
     }
 
 }

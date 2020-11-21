@@ -48,8 +48,11 @@
                                 <td><?php echo $user->correo; ?></td>
                                 <td><?php echo $user->permiso ?></td>
                                 <td>
-                                    <button class="btn btn-sm btn-outline-info">Actualizar</button>
-                                    <button class="btn btn-sm btn-outline-danger">Eliminar</button>
+                                    <form action="../../controladores/UpdateUsuariosController.php" method="get">
+                                        <input type="text" name ="id" value="<?php echo $user->usuario_id;?>" hidden id="usuario_id">
+                                        <input type="submit" value="Actualizar" class ="btn btn-sm btn-outline-info">
+                                    </form>
+                                    <button class="btn btn-sm btn-outline-danger" id="delete">Eliminar</button>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
