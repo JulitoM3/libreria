@@ -73,4 +73,8 @@ class NewUser{
         }
     }
 
+    public function updateUser($id, $nombre, $a_paterno, $a_materno, $correo, $id_permisos){
+        
+    }
+
 }
