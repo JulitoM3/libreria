@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../../assets/css/usuarios.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de usuarios</title>
 
@@ -48,11 +49,20 @@
                                 <td><?php echo $user->correo; ?></td>
                                 <td><?php echo $user->permiso ?></td>
                                 <td>
-                                    <form action="../../controladores/UpdateUsuariosController.php" method="get">
-                                        <input type="text" name ="id" value="<?php echo $user->usuario_id;?>" hidden id="usuario_id">
-                                        <input type="submit" value="Actualizar" class ="btn btn-sm btn-outline-info">
+                                    <form action="../../controladores/EditUsuariosController.php" method="get">
+                                        <input type="text" name="id" value="<?php echo $user->usuario_id; ?>" hidden id="usuario_id">
+                                        <div class="btn-group">
+                                        <button class="btn btn-sm btn-outline-info">
+                                            <i class="far fa-eye"></i>
+                                        </button>
                                     </form>
-                                    <button class="btn btn-sm btn-outline-danger" id="delete">Eliminar</button>
+                                        <button class="btn btn-sm btn-outline-danger" id="delete">
+                                            <i class="far fa-trash-alt"></i>
+                                        </button>
+                                        <button>
+                                            <i class="fas fa-key"></i>
+                                        </button>
+                                    </div>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
@@ -82,6 +92,7 @@
             </div>
             <script src="../../assets/js/usuarios.js"></script>
             <script src="../../assets/js/paginado.js"></script>
+            <script src="https://kit.fontawesome.com/039cae277a.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
