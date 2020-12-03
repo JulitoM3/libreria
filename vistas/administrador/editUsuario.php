@@ -36,7 +36,7 @@
                 Datos para editar
             </div>
             <div class="card-body">
-                <form action="UpdateUsuarioController.php" method="post">
+                <form action="UpdateUsersController.php" method="post">
                     <input type="text" name="id" id="id" value="<?php echo $usuario->usuario_id; ?>" hidden>
                     <label for="role">Nivel de permisos</label>
                     <select name="role" id="role" class="form-control" value="">
