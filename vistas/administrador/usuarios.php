@@ -52,47 +52,47 @@
                                     <form action="../../controladores/EditUsuariosController.php" method="get">
                                         <input type="text" name="id" value="<?php echo $user->usuario_id; ?>" hidden id="usuario_id">
                                         <div class="btn-group">
-                                        <button class="btn btn-sm btn-outline-info">
-                                            <i class="far fa-eye"></i>
-                                        </button>
+                                            <button class="btn btn-sm btn-outline-info">
+                                                <i class="far fa-eye" title="Editar usuario"></i>
+                                            </button>
                                     </form>
-                                        <button class="btn btn-sm btn-outline-danger" id="delete">
-                                            <i class="far fa-trash-alt"></i>
-                                        </button>
-                                        <button>
-                                            <i class="fas fa-key"></i>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <button <?php
-                                if ($disponibles < floatval(0.3)) {
-                                    echo "";
-                                } else {
-                                    echo "disabled";
-                                }; ?> class="btn btn-sm btn-info">
-                            anterior
-                        </button>
-                        <button <?php
-                                if ($disponibles > floatval(0.1)) {
-                                    echo "";
-                                } else {
-                                    echo "disabled";
-                                }; ?> class="btn btn-sm btn-primary">
-                            siguiente
-                        </button>
-                    </div>
-                </div>
-                <a href="../vistas/administrador/dashboard.php" class="btn btn-danger">Atras</a>
+                                    <button class="btn btn-sm btn-outline-danger" id="delete">
+                                        <i class="far fa-trash-alt" title="Eliminar usuario"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-primary">
+                                        <i class="fas fa-key" title="Asignar contraseña por defecto"></i>
+                                    </button>
             </div>
-            <script src="../../assets/js/usuarios.js"></script>
-            <script src="../../assets/js/paginado.js"></script>
-            <script src="https://kit.fontawesome.com/039cae277a.js" crossorigin="anonymous"></script>
+            </td>
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
+        </table>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <button <?php
+                        if ($disponibles < floatval(0.3)) {
+                            echo "";
+                        } else {
+                            echo "disabled";
+                        }; ?> class="btn btn-sm btn-info">
+                    anterior
+                </button>
+                <button <?php
+                        if ($disponibles > floatval(0.1)) {
+                            echo "";
+                        } else {
+                            echo "disabled";
+                        }; ?> class="btn btn-sm btn-primary">
+                    siguiente
+                </button>
+            </div>
+        </div>
+        <a href="../vistas/administrador/dashboard.php" class="btn btn-danger">Atras</a>
+        </div>
+        <script src="../../assets/js/usuarios.js"></script>
+        <script src="../../assets/js/paginado.js"></script>
+        <script src="https://kit.fontawesome.com/039cae277a.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

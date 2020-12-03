@@ -73,8 +73,18 @@ class NewUser{
         }
     }
 
-    public function updateUser($id, $nombre, $a_paterno, $a_materno, $correo, $id_permisos){
-        
+    public static function updateUser($id, $nombre, $a_paterno, $a_materno, $correo, $id_permisos){
+        require_once('Conexion.php');
+        $db = Conexion::getInstance();
+        $usuario ;
+        $sql = "select * from fn_update_usuarios(". $id . ",'" . $nombre . "','" . $a_paterno . "','" . $a_materno . "','" . $correo . "'," . $id_permisos . ")";
+        $result = $db->prepare($sql);
+        $result->execute();
+        if($result->rowCount() > 0){
+            return  true;
+        }else{
+            return false;
+        }
     }
 
 }
