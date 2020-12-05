@@ -36,7 +36,7 @@
                     </thead>
                     <tbody>
                         <?php foreach ($usuarios as $usuario => $user) : ?>
-                            <tr>
+                            <tr id = "<?php echo $user->usuario_id; ?>">
                                 <td>
                                     <?php echo $user->nombres; ?>
                                 </td>
@@ -56,10 +56,10 @@
                                                 <i class="far fa-eye" title="Editar usuario"></i>
                                             </button>
                                     </form>
-                                    <button class="btn btn-sm btn-outline-danger" id="delete">
+                                    <button class="btn btn-sm btn-outline-danger delete">
                                         <i class="far fa-trash-alt" title="Eliminar usuario"></i>
                                     </button>
-                                    <button class="btn btn-sm btn-outline-primary">
+                                    <button class="btn btn-sm btn-outline-primary update_password">
                                         <i class="fas fa-key" title="Asignar contraseña por defecto"></i>
                                     </button>
             </div>
@@ -90,6 +90,7 @@
         </div>
         <a href="../vistas/administrador/dashboard.php" class="btn btn-danger">Atras</a>
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script src="../../assets/js/usuarios.js"></script>
         <script src="../../assets/js/paginado.js"></script>
         <script src="https://kit.fontawesome.com/039cae277a.js" crossorigin="anonymous"></script>
