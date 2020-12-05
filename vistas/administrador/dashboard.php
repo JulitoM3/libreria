@@ -47,7 +47,7 @@
                     </div>
                     <div class="card-body">
                         <a href="#" class="form-control btn btn-sm btn-outline-info">Ver todos los libros</a>
-                        <a href="#" class="form-control btn btn-sm btn-outline-success">Ingresar nuevo libro</a>
+                        <a href="../libros/nuevo.php" class="form-control btn btn-sm btn-outline-success">Ingresar nuevo libro</a>
                     </div>
                 </div>
             </div>
