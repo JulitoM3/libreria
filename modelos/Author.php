@@ -10,15 +10,31 @@ class Author
 
     public function getAuthors()
     {
-        $sql = "select CONCAT(nombre, ' ', a_paterno, ' ', a_materno ) as nombre from autores";
+        $sql = "select autor_id, CONCAT(nombre, ' ', a_paterno, ' ', a_materno ) as nombre from autores";
         $result = $this->db->prepare($sql);
         $result->execute();
         if($result->rowCount() > 0){
-            return true;
+            $autores = $result->fetchAll(PDO::FETCH_OBJ);
+            return $autores;
         }else{
-            return false;
+            return 'Sin autores';
         }
     }
 
-    public function createAutor($nombre, $a_paterno, $a_materno, $nobel)
+    public static function createAutor($nombre, $a_paterno, $a_materno, $nobel){
+        require('Conexion.php');
+        $respuesta = [];
+        $db = Conexion::getInstance();
+        $sql = "select * from fn_create_autor('". $nombre . "','" . $a_paterno . "','" . $a_materno . "'," . $nobel . "::boolean)";
+        $result = $db->prepare($sql);
+        $result->execute();
+        if($result->rowCount()>0){
+            
+            array_push($respuesta, true);
+            array_push($respuesta, $result->fetch(PDO::FETCH_OBJ));
+            return $respuesta;
+        }else{
+            return array_push($respuesta,false);
+        }
+    }
 }
