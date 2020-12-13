@@ -43,7 +43,7 @@
                                 <label for="precio">Precio</label>
                                 <input type="text" name="precio" id="precio" class="form-control">
                             </div>
-                        </div>
+                        </div><br>
                         <div class="form-row">
                             <div class="col-md-4">
                                 <label for="stock">Unidades entrantes</label>
@@ -52,7 +52,7 @@
                             <div class="col-md-4">
                                 <label for="autor_id">Autor</label>
                                 <i class="far fa-question-circle" data-toggle="tooltip" data-placement="top" title="Si el autor no se encuentra en la lista por favor agregalo"></i>
-                                <select name="autor_id" id="autor_id" class="form-control">
+                                <select name="autor_id" id="autor" class="form-control">
 
                                 </select>
                                 <a href="#" data-toggle="modal" data-target="#autoresModal">Agregar autor</a>
@@ -64,7 +64,12 @@
 
                                 </select>
                                 <a href="#" data-toggle="modal" data-target="#editorialModal">Agregar editorial</a>
-
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-12">
+                                <label for="img">Imagen libro</label>
+                                <input type="file" name="img" id="img" accept="image/png, image/jpeg" class="form-control-file">
                             </div>
                         </div>
 
@@ -91,19 +96,26 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="../../controladores/CreateAutorsController.php" method="post">
+                    <ul id="errors" style="list-style-type:none; font-size:smaller">
+
+                    </ul>
+                    <form action="../../controladores/CreateAutorsController.php" method="post" id="frm-author">
                         <div class="form-row">
                             <div class="col-md-4">
                                 <label for="nombre">Nombre</label>
-                                <input type="text" name="nombre" id="nombre" class="form-control">
+                                <input type="text" name="nombre" id="nombre_author" class="form-control">
+                                <span class="alert alert-danger" hidden id="error_nombre_author" style="font-size:smaller"></span>
                             </div>
+
                             <div class="col-md-4">
                                 <label for="ap_pat">Apellido paterno</label>
-                                <input type="text" name="ap_pat" id="ap_pat" class="form-control">
+                                <input type="text" name="apellido_paterno" id="apellido_paterno" class="form-control">
+                                <span class="alert alert-danger" hidden id="error_apat"></span>
                             </div>
                             <div class="col-md-4">
                                 <label for="ap_mat">Apellido materno</label>
-                                <input type="text" name="ap_mat" id="ap_mat" class="form-control">
+                                <input type="text" name="apellido_materno" id="apellido_materno" class="form-control">
+                                <span class="alert alert-danger" hidden id="error_amat"></span>
                             </div>
                         </div><br>
                         <div class="form-row">
@@ -119,7 +131,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary">Guardar</button>
+                    <button type="button" class="btn btn-primary" id="save_author">Guardar</button>
                 </div>
             </div>
         </div>
