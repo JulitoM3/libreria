@@ -16,10 +16,17 @@ class Editorial
         $result = $this->db->prepare($sql);
         $result->execute();
         if ($result->rowCount() > 0) {
-
-            return $result->fetchAll(PDO::FETCH_OBJ);
+            $editoriales = $result->fetchAll(PDO::FETCH_OBJ);
+            return $editoriales;
         } else {
             return 'Sin editoriales';
         }
+    }
+
+    public function createEditorial($nombre, $sitio_web){
+        $sql = "select * from fn_create_editoriales('".$nombre . "','". $sitio_web . "')";
+        $result = $this->db->prepare($sql);
+        $result->execute();
+        return $result->fetchAll(PDO::FETCH_OBJ);
     }
 }
