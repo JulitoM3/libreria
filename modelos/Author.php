@@ -32,9 +32,9 @@ class Author
             
             array_push($respuesta, true);
             array_push($respuesta, $result->fetch(PDO::FETCH_OBJ));
-            return $respuesta;
         }else{
-            return array_push($respuesta,false);
+             array_push($respuesta,false);
         }
+        return $respuesta;
     }
 }
