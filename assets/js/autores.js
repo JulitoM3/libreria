@@ -6,7 +6,7 @@ window.addEventListener('load', function () {
   })
     .then(function (response) {
       let autores = response.data
-
+      
       for (const autor in autores) {
         
         const nuevo_option = document.createElement('option');
@@ -15,6 +15,13 @@ window.addEventListener('load', function () {
         select_autor.appendChild(nuevo_option);
 
       }
+    })
+    .catch(function(error){
+      const nuevo_option = document.createElement('option');
+      nuevo_option.id = 'default';
+      nuevo_option.textContent = error.response.data;
+      nuevo_option.value = 'NA';
+      select_autor.appendChild(nuevo_option);
     });
 })
 
@@ -40,12 +47,18 @@ save_autor.addEventListener('click', function () {
     },
   })
     .then(function (response) {
-      console.log(response)
+      
       while (lista.firstChild) {
         lista.removeChild(lista.firstChild);
       }
       const nuevo_option = document.createElement('option');
       const success = document.createElement('li');
+      const def = document.getElementById('default');
+      if (typeof(def) == 'undefined' && def == null)
+      {
+        def.remove();
+        // NotExists.
+      }
       nuevo_option.textContent = nombre.value + ' ' + apellido_paterno.value + ' ' + apellido_materno.value;
       nuevo_option.value = response.data.id.fn_create_autor;
       success.textContent = 'Autor añadido correctamente a la lista';
@@ -56,16 +69,16 @@ save_autor.addEventListener('click', function () {
       
     })
     .catch(function (error) {
-      console.log(error.response.data)
+      
       while (lista.firstChild) {
         lista.removeChild(lista.firstChild);
       }
-      for (const errors of error.response.data) {
-        const nuevo = document.createElement('li');
-        nuevo.textContent = errors;
-        nuevo.classList.add('alert')
-        nuevo.classList.add('alert-danger')
-        lista.appendChild(nuevo);
-      }
+       for (const errors of error.response.data) {
+         const nuevo = document.createElement('li');
+         nuevo.textContent = errors;
+         nuevo.classList.add('alert')
+         nuevo.classList.add('alert-danger')
+         lista.appendChild(nuevo);
+       }
     })
 })

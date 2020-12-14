@@ -12,19 +12,20 @@ if (!$validator->validar_falla()) {
     $a_materno = htmlspecialchars($varPOST['apellido_materno']);
     $nobel = htmlspecialchars($varPOST['nobel']);
     $autores = Author::createAutor($nombre, $a_paterno, $a_materno, $nobel);
-    if (boolval($autores[0])) {
-        http_response_code(200);
-        echo json_encode(
-            [
-                'success' => 'Se registró el autor correctamente',
-                'id' => $autores[1],
-            ],
-            JSON_PRETTY_PRINT
-        );
-    } else {
-        http_response_code(500);
-        echo json_encode(['damaged' => 'Algo está mal con los datos'], JSON_PRETTY_PRINT);
-    }
+    
+     if (boolval($autores[0])) {
+         http_response_code(200);
+         echo json_encode(
+             [
+                 'success' => 'Se registró el autor correctamente',
+                 'id' => $autores[1],
+             ],
+             JSON_PRETTY_PRINT
+         );
+     } else {
+         http_response_code(500);
+         echo json_encode(['damaged' => 'Algo está mal con los datos'], JSON_PRETTY_PRINT);
+     }
 } else {
     http_response_code(500);
     echo json_encode($validator->get_errores(), JSON_PRETTY_PRINT);
