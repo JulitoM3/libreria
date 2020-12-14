@@ -8,7 +8,7 @@ window.addEventListener('load', function () {
       let autores = response.data
 
       for (const autor in autores) {
-        console.log(autores[autor].nombre)
+        
         const nuevo_option = document.createElement('option');
         nuevo_option.textContent = autores[autor].nombre;
         nuevo_option.value = autores[autor].autor_id;
