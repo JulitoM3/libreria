@@ -148,7 +148,10 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="" method="post">
+                <ul id="errors_editorial" style="list-style-type:none; font-size:smaller">
+
+                    </ul>
+                    <form action="../../controladores/CreateEditorialsController.php" method="post" id="frm-editorial">
                         <label for="nombre_editorial">Nombre</label>
                         <input type="text" name="nombre_editorial" id="nombre_editorial" class="form-control"><br>
 
@@ -158,7 +161,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary">Guardar</button>
+                    <button type="button" class="btn btn-primary" id="save_editorial">Guardar</button>
                 </div>
             </div>
         </div>
