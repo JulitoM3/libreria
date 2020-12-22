@@ -75,7 +75,7 @@
 
                 </div>
                 <div class="card-footer">
-                    <input type="submit" value="Guardar" class="btn btn-success form-control">
+                    <input type="submit" value="Guardar" class="btn btn-success form-control" id="save_book">
                 </div>
                 </form>
             </div>
