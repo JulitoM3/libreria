@@ -1,10 +1,13 @@
 const select_autor = document.getElementById('autor');
+const save_book = document.getElementById('save_book');
+
 window.addEventListener('load', function () {
   axios({
     method: 'get',
     url: '../../controladores/ShowAutorsController.php',
   })
     .then(function (response) {
+      
       let autores = response.data
       
       for (const autor in autores) {
@@ -22,6 +25,9 @@ window.addEventListener('load', function () {
       nuevo_option.textContent = error.response.data;
       nuevo_option.value = 'NA';
       select_autor.appendChild(nuevo_option);
+      
+      save_book.setAttribute('disabled','true');
+
     });
 })
 
@@ -53,11 +59,10 @@ save_autor.addEventListener('click', function () {
       }
       const nuevo_option = document.createElement('option');
       const success = document.createElement('li');
-      const def = document.getElementById('default');
-      if (typeof(def) == 'undefined' && def == null)
+      let def = document.getElementById('default');
+      if (typeof(def) != 'undefined' && def != null)
       {
         def.remove();
-        // NotExists.
       }
       nuevo_option.textContent = nombre.value + ' ' + apellido_paterno.value + ' ' + apellido_materno.value;
       nuevo_option.value = response.data.id.fn_create_autor;
