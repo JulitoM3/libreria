@@ -11,11 +11,15 @@ $validator->validar_vacio($varPOST);
 $validator->validar_url($varPOST['web_editorial']);
  if(!$validator->validar_falla()){
      http_response_code(200);
-     $nombre_editorial = $varPOST['nombre_editorial'];
-     $web_editorial = $varPOST['web_editorial'];
+    
+      $nombre_editorial = $varPOST['nombre_editorial'];
+      $web_editorial = $varPOST['web_editorial'];
 
-     $editorial->createEditorial($nombre_editorial, $web_editorial);
-     
+      $id_editorial = $editorial->createEditorial($nombre_editorial, $web_editorial);
+      echo json_encode([
+          'success' => 'Se registró el editorial correctamente',
+          'id' => $id_editorial
+      ]);
 }else{
     http_response_code(500);
     
